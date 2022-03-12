@@ -16,4 +16,4 @@
 [build]
   functions = '/backend/functions'
   base = '/'
-  publish = '/build'
+  publish = './build'
