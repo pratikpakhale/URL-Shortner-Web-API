@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# tiNyy
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[tiNyy](https://tinyy.ml) is a platform to generate tiny urls of long urls through an api call
+or going to [tinyy.ml](https://tinyy.ml)
 
-## Available Scripts
+## Deployment
 
-In the project directory, you can run:
+The site is Live at [tinyy.ml](https://tinyy.ml) ✨
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Client:** Vanilla JS, TailwindCSS, DaisyUI
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Server:** Node, Express, MongoDB
 
-### `npm test`
+## Environment Variables
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To run this project, you will need to add the following environment variables to your .env file
 
-### `npm run build`
+`MONGODB_URI` : the connection url to the database
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Color Reference
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+| Color                       | Hex     |
+| --------------------------- | ------- |
+| Default Color - Sky Blueish | #3abff8 |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## API Reference
 
-### `npm run eject`
+#### Get total URLs count
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+  GET /count
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Get original url
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+  GET /:id
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `id`      | `string` | **Required**. tinyy url Id |
 
-## Learn More
+#### Post an url
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+  Post /add
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Use the following key value pair in the body while making an api call.
+Make sure you use 'x-www-form-urlencoded' format.
 
-### Code Splitting
+| Key   | Value         | Description                |
+| :---- | :------------ | :------------------------- |
+| `url` | `a_valid_url` | **Required**. original url |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Authors
 
-### Analyzing the Bundle Size
+- [@pratikpakhale](https://www.github.com/pratikpakhale)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Contact
 
-### Making a Progressive Web App
+For contact, dm on twitter [@\_pratikpakhale](https://twitter.com/_pratikpakhale) or email me pratikpakhale20@gmail.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Acknowledgements
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [TailwindCSS](https://tailwindcss.com/)
+- [DaisyUI](https://daisyui.com/)
+- [MongoDB](https://www.mongodb.com/)
+- [ExpressJS](https://expressjs.com/)
+- [Mongoose](https://mongoosejs.com/docs/api.html)
+- [Netlify Lambda Functions](https://www.netlify.com/products/functions/)
