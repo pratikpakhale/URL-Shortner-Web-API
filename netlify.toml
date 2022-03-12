@@ -1,0 +1,19 @@
+[[redirects]]
+  from = '/:id'
+  to = '/.netlify/functions/app/:id'
+  status = 200
+
+[[redirects]]
+  from = '/add'
+  to = '/.netlify/functions/app/add'
+  status = 200
+
+[[redirects]]
+  from = '/count'
+  to = '/.netlify/functions/app/count'
+  status = 200
+
+[build]
+  functions = '/backend/functions'
+  base = '/'
+  publish = '/build'
