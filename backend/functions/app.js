@@ -19,22 +19,26 @@ const router = express.Router()
 
 router.get('/:id', async (req, res, next) => {
   try {
+    if (req.params.id === '') {
+      return
+    }
+
     const response = await db.getURL(req.params.id)
 
-    if (res.status === 404 || res.status === 406) {
-      res.send(response)
-    } else if (validURL(response)) {
+    if (validURL(response)) {
       if (!response.includes('http://') && !response.includes('https://'))
         res.redirect(`https://${response}`)
       else {
         res.redirect(response)
       }
     } else {
-      res.redirect('/')
+      // res.send(req.params.id)
     }
   } catch (e) {
     res.send(e.message)
   }
+
+  next()
 })
 
 router.get('/count', async (req, res, next) => {

@@ -34,7 +34,7 @@ const addURL = async url => {
 const getURL = async id => {
   try {
     const urlData = await URL.find({ id: id })
-    if (urlData === '' || !urlData || urlData === null || urlData === undefined)
+    if (urlData.length === 0 || urlData === null || urlData === undefined)
       return {
         status: 404,
         message: 'Url Not Found',
