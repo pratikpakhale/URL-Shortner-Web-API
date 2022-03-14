@@ -29,12 +29,12 @@ router.get('/:id', async (req, res, next) => {
       else {
         res.redirect(response)
       }
+    } else {
+      res.redirect('/')
     }
   } catch (e) {
     res.send(e.message)
   }
-
-  next()
 })
 
 router.get('/count', async (req, res, next) => {
