@@ -78,6 +78,33 @@ const updateViews = async urlData => {
   )
 }
 
+const getViews = async id => {
+  try {
+    let urlData = await URL.find({ id: id })
+    urlData = urlData[urlData.length - 1]
+
+    if (
+      urlData === '' ||
+      !urlData ||
+      urlData === null ||
+      urlData === undefined ||
+      !urlData.views
+    ) {
+      return {
+        status: 404,
+        message: 'Url Not Found',
+      }
+    }
+
+    return { status: 200, views: urlData.views }
+  } catch (e) {
+    return {
+      status: 406,
+      message: e.message,
+    }
+  }
+}
+
 function generateID() {
   const randomChars =
     'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
@@ -92,4 +119,5 @@ module.exports = {
   addURL,
   getURL,
   getCount,
+  getViews,
 }

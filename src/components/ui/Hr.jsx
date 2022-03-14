@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Hr() {
+function Hr({ id }) {
   return (
-    <div className='flex flex-col w-full'>
+    <div className='flex flex-col w-full' id={id}>
       <div className='divider'></div>
     </div>
   )

@@ -51,6 +51,19 @@ router.get('/count', async (req, res, next) => {
   next()
 })
 
+router.get('/views/:id', async (req, res, next) => {
+  try {
+    const response = await db.getViews(req.params.id)
+
+    if (!response.status)
+      res.send({ status: 500, message: 'Something went wrong!' })
+
+    res.send(response)
+  } catch (e) {
+    res.send({ status: 500, message: e.message })
+  }
+})
+
 router.post('/add', async (req, res) => {
   try {
     if (req.body.url) {

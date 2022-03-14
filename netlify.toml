@@ -13,6 +13,11 @@
   to = '/.netlify/functions/app/count'
   status = 200
 
+[[redirects]]
+  from = '/views/*'
+  to = '/.netlify/functions/app/views/*'
+  status = 200
+
 [build]
   functions = '/backend/functions'
   base = '/'

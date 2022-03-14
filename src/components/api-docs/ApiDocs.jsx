@@ -5,11 +5,6 @@ import Code from './Code'
 function ApiDocs() {
   return (
     <>
-      <span
-        className='anchor'
-        id='APIdocs'
-        style={{ position: 'absolute', transform: 'translateY(-10vh)' }}
-      ></span>
       <div>
         <Title title={'API Endpoint'} />
         <Code code={`https://tinyy.ml/add`} patternBracket />
@@ -19,7 +14,7 @@ function ApiDocs() {
           code={`curl --location --request POST 'http://tinyy.ml/add' \\ \n--header 'Content-Type: application/x-www-form-urlencoded' \\ \n--data-urlencode 'url=https://google.com'`}
         />
 
-        <Title title={'Node.js'} />
+        <Title title={'JavaScript'} />
         <Code
           code={`var myHeaders = new Headers();\nmyHeaders.append("Content-Type", "application/x-www-form-urlencoded");\nvar urlencoded = new URLSearchParams();\nurlencoded.append("url", "https://google.com");)\nvar requestOptions = {
         method: 'POST',
@@ -46,6 +41,17 @@ function ApiDocs() {
             />
           </div>
         </div>
+
+        <Title title={'Get Public Metrics by ID'} />
+        <Code
+          code={`var requestOptions = {
+            method: 'GET',
+            redirect: 'follow'
+          };\nfetch("tinyy.ml/views/:id", requestOptions)
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));`}
+        />
       </div>
     </>
   )

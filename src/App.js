@@ -12,7 +12,7 @@ function App() {
       <Navbar />
       <Hero />
       <Form />
-      <Hr />
+      <Hr id='APIdocs' />
       <ApiDocs />
       <Hr />
       <Stats />
