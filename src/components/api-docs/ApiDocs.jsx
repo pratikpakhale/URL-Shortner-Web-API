@@ -1,8 +1,13 @@
 import React from 'react'
 import Title from './Title'
 import Code from './Code'
+import TwitterSVG from '../svgs/TwitterSVG'
 
 function ApiDocs() {
+  const TwitterDmText = encodeURIComponent(
+    `Hey Pratik,\nI had some suggestions regarding tinyy.ml\n\nSuggestions:\n`
+  )
+
   return (
     <>
       <div>
@@ -53,6 +58,16 @@ function ApiDocs() {
             .catch(error => console.log('error', error));`}
         />
       </div>
+
+      <a
+        href={`https://twitter.com/messages/compose?recipient_id=1132236270002851842&text=${TwitterDmText}`}
+        className='twitter-dm-button btn btn-outline btn-info m-10 mx-auto align-middle'
+        target='_blank'
+        rel='noopener noreferrer'
+        data-screen-name='@_pratikpakhale'
+      >
+        Direct Contact &nbsp;&nbsp; <TwitterSVG />
+      </a>
     </>
   )
 }
