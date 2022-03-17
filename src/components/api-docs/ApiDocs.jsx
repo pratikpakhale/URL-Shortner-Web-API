@@ -61,7 +61,7 @@ function ApiDocs() {
 
       <a
         href={`https://twitter.com/messages/compose?recipient_id=1132236270002851842&text=${TwitterDmText}`}
-        className='twitter-dm-button btn btn-outline btn-info m-10 mx-auto align-middle'
+        className='twitter-dm-button btn btn-outline btn-info m-10 align-middle'
         target='_blank'
         rel='noopener noreferrer'
         data-screen-name='@_pratikpakhale'
