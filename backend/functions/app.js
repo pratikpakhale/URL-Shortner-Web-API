@@ -31,8 +31,6 @@ router.get('/:id', async (req, res, next) => {
       else {
         res.redirect(response)
       }
-    } else {
-      // res.send(req.params.id)
     }
   } catch (e) {
     res.send(e.message)

@@ -1,9 +1,4 @@
 [[redirects]]
-  from = '/:id'
-  to = '/.netlify/functions/app/:id'
-  status = 200
-
-[[redirects]]
   from = '/add'
   to = '/.netlify/functions/app/add'
   status = 200
@@ -17,6 +12,11 @@
   from = '/views/*'
   to = '/.netlify/functions/app/views/*'
   status = 200
+
+[[redirects]]
+from = '/:id'
+to = '/.netlify/functions/app/:id'
+status = 200
 
 [build]
   functions = '/backend/functions'
