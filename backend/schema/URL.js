@@ -10,6 +10,7 @@ const Link = new mongoose.Schema({
     },
   },
   views: { type: Number, min: 0 },
+  ips: { type: Array },
 })
 
 function validURL(url) {

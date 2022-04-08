@@ -31,7 +31,7 @@ const addURL = async url => {
   }
 }
 
-const getURL = async id => {
+const getURL = async (id, ip) => {
   try {
     const urlData = await URL.find({ id: id })
     if (urlData.length === 0 || urlData === null || urlData === undefined)
@@ -42,6 +42,8 @@ const getURL = async id => {
 
     const lastElem = urlData[urlData.length - 1] // as urlData contains a array of matching ids
     await updateViews(lastElem)
+
+    await addIP(lastElem, ip)
     return lastElem.url
   } catch (e) {
     return {
@@ -68,7 +70,19 @@ const getCount = async () => {
   }
 }
 
+const addIP = async (urlData, ip) => {
+  // console.log(ip)
+
+  await URL.findByIdAndUpdate(
+    urlData._id,
+    { $push: { ips: ip } },
+    { upsert: true }
+  )
+}
+
 const updateViews = async urlData => {
+  // console.log('views updated')
+
   if (!urlData.id) return
 
   await URL.findByIdAndUpdate(

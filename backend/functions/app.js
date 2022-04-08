@@ -22,8 +22,9 @@ router.get('/:id', async (req, res, next) => {
     if (req.params.id === '') {
       return
     }
+    let ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress || null
 
-    const response = await db.getURL(req.params.id)
+    const response = await db.getURL(req.params.id, ip)
 
     if (validURL(response)) {
       if (!response.includes('http://') && !response.includes('https://'))
