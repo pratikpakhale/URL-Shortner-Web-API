@@ -10,7 +10,7 @@ function App() {
   return (
     <div className='h-screen scroll-smooth'>
       <Navbar />
-      <div class='alert alert-warning shadow-lg my-10 w-1/2 mx-auto'>
+      {/* <div class='alert alert-warning shadow-lg my-10 w-1/2 mx-auto'>
         <div>
           <svg
             xmlns='http://www.w3.org/2000/svg'
@@ -30,7 +30,7 @@ function App() {
             functionalities might now work
           </span>
         </div>
-      </div>
+      </div> */}
       <Hero />
       <Form />
       <Hr id='APIdocs' />
