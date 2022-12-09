@@ -80,10 +80,10 @@ router.post('/add', async (req, res) => {
   }
 })
 
-router.get('/rename/:id/:rid', async (req, res) => {
+router.get('/rename', async (req, res) => {
   try {
-    if (req.params.id && req.params.rid) {
-      const response = await db.renameURL(req.params.id, req.params.rid)
+    if (req.query.id && req.query.rid) {
+      const response = await db.renameURL(req.query.id, req.query.rid)
       res.json(response)
     } else {
       res.json({ status: 406, message: 'Invalid format of req' })
