@@ -129,9 +129,40 @@ function generateID() {
   return result
 }
 
+const renameURL = async (id, rid) => {
+  try {
+    const urlData = await URL.findOne({ id })
+
+    if (!urlData) {
+      return {
+        status: 404,
+        message: 'Url Not Found',
+      }
+    }
+
+    const rurlData = await URL.findOne({ id: rid })
+
+    if (rurlData) {
+      return {
+        status: 400,
+        message: 'Url Already Exists',
+      }
+    }
+
+    urlData.id = rid
+    await urlData.save()
+  } catch (e) {
+    return {
+      status: 406,
+      message: e.message,
+    }
+  }
+}
+
 module.exports = {
   addURL,
   getURL,
   getCount,
   getViews,
+  renameURL,
 }

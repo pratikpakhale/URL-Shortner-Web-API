@@ -80,6 +80,22 @@ router.post('/add', async (req, res) => {
   }
 })
 
+router.get('/rename/:id/:rid', async (req, res) => {
+  try {
+    if (req.params.id && req.params.rid) {
+      const response = await db.renameURL(req.params.id, req.params.rid)
+      res.json(response)
+    } else {
+      res.json({ status: 406, message: 'Invalid format of req' })
+    }
+  } catch (e) {
+    res.json({
+      status: 500,
+      message: e.message,
+    })
+  }
+})
+
 app.use('/', router)
 
 function validURL(url) {
