@@ -96,6 +96,22 @@ router.get('/rename', async (req, res) => {
   }
 })
 
+router.get('/delete', async (req, res) => {
+  try {
+    if (req.query.id) {
+      const response = await db.deleteURL(req.query.id)
+      res.json(response)
+    } else {
+      res.json({ status: 406, message: 'Invalid format of req' })
+    }
+  } catch (e) {
+    res.json({
+      status: 500,
+      message: e.message,
+    })
+  }
+})
+
 app.use('/', router)
 
 function validURL(url) {

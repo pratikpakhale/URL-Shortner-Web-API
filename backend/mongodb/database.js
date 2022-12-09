@@ -151,6 +151,39 @@ const renameURL = async (id, rid) => {
 
     urlData.id = rid
     await urlData.save()
+    return {
+      status: 200,
+      message: 'Renamed Successfully',
+      prev: id,
+      new: rid,
+      url: urlData.url,
+    }
+  } catch (e) {
+    return {
+      status: 406,
+      message: e.message,
+    }
+  }
+}
+
+const deleteURL = async id => {
+  try {
+    const url = await URL.findOne({ id })
+
+    if (!url) {
+      return {
+        status: 404,
+        message: 'Url Not Found',
+      }
+    }
+
+    await url.remove()
+    return {
+      status: 200,
+      message: 'Deleted Successfully',
+      id: id,
+      url: url.url,
+    }
   } catch (e) {
     return {
       status: 406,
@@ -165,4 +198,5 @@ module.exports = {
   getCount,
   getViews,
   renameURL,
+  deleteURL,
 }
