@@ -60,8 +60,16 @@ function ApiDocs() {
       </div>
 
       <a
+        href={`https://www.postman.com/pakhalepratik/workspace/tinyy`}
+        className='twitter-dm-button btn btn-outline border-postman text-postman m-10 align-middle hover:bg-postman hover:text-white hover:border-postman'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        View in Postman
+      </a>
+      <a
         href={`https://twitter.com/messages/compose?recipient_id=1132236270002851842&text=${TwitterDmText}`}
-        className='twitter-dm-button btn btn-outline btn-info m-10 align-middle'
+        className='twitter-dm-button btn btn-outline btn-info my-10 align-middle'
         target='_blank'
         rel='noopener noreferrer'
         data-screen-name='@_pratikpakhale'
