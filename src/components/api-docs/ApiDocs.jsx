@@ -12,7 +12,7 @@ function ApiDocs() {
     <>
       <div>
         <Title title={'API Endpoint'} />
-        <Code code={`https://tinyy.ml/add`} patternBracket />
+        <Code code={`tinyy.netlify.app/add`} patternBracket />
 
         <Title title={'cURL'} />
         <Code
@@ -26,7 +26,7 @@ function ApiDocs() {
         headers: myHeaders,
         body: urlencoded,
         redirect: 'follow'
-      };\nfetch("http://tinyy.ml/add", requestOptions)
+      };\nfetch("tinyy.netlify.app/add", requestOptions)
       .then(response => response.text())
       .then(result => console.log(result))
       .catch(error => console.log('error', error));`}
@@ -52,7 +52,7 @@ function ApiDocs() {
           code={`var requestOptions = {
             method: 'GET',
             redirect: 'follow'
-          };\nfetch("tinyy.ml/views/:id", requestOptions)
+          };\nfetch("tinyy.netlify.app/views/:id", requestOptions)
             .then(response => response.text())
             .then(result => console.log(result))
             .catch(error => console.log('error', error));`}

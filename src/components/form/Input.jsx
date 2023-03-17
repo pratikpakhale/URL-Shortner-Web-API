@@ -38,7 +38,7 @@ function Input({ setAlert }) {
     try {
       const response = await postUrl(urlInput)
       if (response.status === 200) {
-        setUrlInput('tinyy.ml/' + response.id)
+        setUrlInput('tinyy.netlify.app/' + response.id)
 
         setSubmitSuccess(true)
       } else {
