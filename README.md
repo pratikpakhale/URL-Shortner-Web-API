@@ -1,11 +1,11 @@
 # tiNyy
 
-[tiNyy](https://tinyy.ml) is a platform to generate tiny urls of long urls through an api call
-or going to [tinyy.ml](https://tinyy.ml)
+[tiNyy](https://tinyy.netlify.app/) is a platform to generate tiny urls of long urls through an api call
+or going to [tinyy.ml](https://tinyy.netlify.app/)
 
 ## Deployment
 
-The site is Live at [tinyy.ml](https://tinyy.ml) ✨
+The site is Live at [tinyy.ml](https://tinyy.netlify.app/) ✨
 
 ## Tech Stack
 
